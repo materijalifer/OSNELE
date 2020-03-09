@@ -1,0 +1,161 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      5016,        152]
+NotebookOptionsPosition[      4761,        139]
+NotebookOutlinePosition[      5104,        154]
+CellTagsIndexPosition[      5061,        151]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Ovdje", " ", "unijeti", " ", "svoje", " ", "podatke"}], ",", " ", 
+    RowBox[{"u", " ", "osnovnim", " ", "jedinicama", " ", 
+     RowBox[{"(", 
+      RowBox[{"A", ",", " ", "V"}], ")"}]}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"R1", "=", "7"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"R2", "=", "9"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"R4", "=", "5"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"R5", "=", "5"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Is", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"U1", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"U2", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Ra\[CHacek]un", " ", "-", " ", 
+     RowBox[{"kombinacija", " ", "Nortona", " ", "i", " ", 
+      RowBox[{"superpozicije", ":"}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Rp1", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"R4", "*", "R5"}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"R4", "+", "R5"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"In1", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Rp1", "*", "Is"}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"Rp1", "+", "R2"}], ")"}]}]}], ";", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Nortonova", " ", "struja", " ", "za", " ", "strujni", " ", "izvor"}], 
+     "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"In2", "=", 
+     RowBox[{"U1", "/", "R1"}]}], ";", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Nortonova", " ", "struja", " ", "za", " ", "naponski", " ", "izvor", 
+      " ", "U1"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Rp2", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"R2", "*", "R4"}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"R2", "+", "R4"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Up2", "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Rp2", "*", "U2"}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"Rp2", "+", "R5"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"In3", "=", 
+     RowBox[{"Up2", "/", "R2"}]}], ";"}], 
+   RowBox[{"(*", 
+    RowBox[{
+    "Nortonova", " ", "struja", " ", "za", " ", "naponski", " ", "izvor", " ",
+      "U2"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Inu", "=", 
+    RowBox[{
+     RowBox[{"Abs", "[", 
+      RowBox[{"In1", "-", "In2", " ", "-", "In3"}], "]"}], "//", "N"}]}], 
+   RowBox[{"(*", 
+    RowBox[{"Ukupna", " ", "Nortonova", " ", "struja", " ", 
+     RowBox[{"(", 
+      RowBox[{"treba", " ", "paziti", " ", "na", " ", "predznake"}], ")"}]}], 
+    " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Rn", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"R1", "*", 
+        RowBox[{"(", 
+         RowBox[{"R2", "+", "Rp1"}], ")"}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"R1", "+", "R2", "+", "Rp1"}], ")"}]}], "//", "N"}]}], 
+   RowBox[{"(*", 
+    RowBox[{"Teveninov", " ", "otpor"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"P", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Inu", "/", "2"}], ")"}], "^", "2"}], "*", "Rn"}]}], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Snaga", " ", "na", " ", "otporu", " ", "za", " ", "R2"}], "=", 
+      "Rn"}], ",", " ", 
+     RowBox[{
+     "jer", " ", "je", " ", "tad", " ", "maximalna", " ", "snaga", " ", "na", 
+      " ", 
+      RowBox[{"R2", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Rezultati", " ", 
+     RowBox[{"redom", ":", " ", 
+      RowBox[{"Inu", 
+       RowBox[{"(", "A", ")"}], " ", "Rn", 
+       RowBox[{"(", "\[CapitalOmega]", ")"}], " ", "P", 
+       RowBox[{"(", "W", ")"}]}]}]}], "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.469623653453125*^9, 3.469624024875*^9}, {
+  3.469624156484375*^9, 3.46962420703125*^9}, {3.469624266375*^9, 
+  3.469624308578125*^9}, {3.46962438225*^9, 3.4696243835625*^9}, {
+  3.46962448625*^9, 3.46962453334375*^9}, {3.46962471246875*^9, 
+  3.46962487703125*^9}, {3.469624946625*^9, 3.469624980625*^9}}]
+},
+WindowSize->{615, 523},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 4212, 117, 632, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
